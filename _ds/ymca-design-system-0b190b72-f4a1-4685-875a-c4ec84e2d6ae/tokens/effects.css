@@ -1,0 +1,38 @@
+/* ============================================================
+   YMCA — Radii, shadows, borders & motion
+   ------------------------------------------------------------
+   Rounded, soft, friendly. Corners are generous; shadows are
+   long, soft and tinted toward YMCA Blue (never hard black).
+   Buttons get a colored "lift" shadow in their own hue.
+   ============================================================ */
+
+:root {
+  /* ---- Corner radii ---- */
+  --radius-xs: 8px;       /* chips, small tags */
+  --radius-sm: 12px;      /* meta chips, inputs */
+  --radius-md: 18px;      /* cards, panels */
+  --radius-lg: 28px;      /* feature cards, image frames */
+  --radius-pill: 999px;   /* buttons, eyebrows, badges */
+
+  /* ---- Shadows (soft, blue-tinted) ---- */
+  --shadow-sm: 0 12px 30px -16px rgba(12, 60, 116, 0.30);
+  --shadow-md: 0 24px 60px -28px rgba(12, 60, 116, 0.35);
+  --shadow-lg: 0 32px 80px -32px rgba(12, 60, 116, 0.40);
+
+  /* Colored button-lift shadows */
+  --shadow-red: 0 16px 34px -14px rgba(213, 0, 50, 0.85);
+  --shadow-red-hover: 0 22px 40px -14px rgba(213, 0, 50, 0.90);
+  --shadow-blue: 0 16px 34px -14px rgba(0, 58, 112, 0.55);
+
+  /* ---- Borders ---- */
+  --border-width: 1.5px; /* @kind other */
+  --border-hairline: 1px; /* @kind other */
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --dur-fast: 0.15s; /* @kind other */
+  --dur-base: 0.2s; /* @kind other */
+  --dur-slow: 0.7s; /* @kind other */
+  --lift: translateY(-4px); /* @kind other */
+  --lift-strong: translateY(-6px); /* @kind other */
+}

@@ -1,0 +1,36 @@
+/* ============================================================
+   YMCA — Spacing & layout tokens
+   ------------------------------------------------------------
+   4px base grid. Section rhythm is generous (96px desktop) to
+   give the warm, open, "room to breathe" feel of the brand.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ---- Layout ---- */
+  --wrap-max: 1180px;       /* content container max width */
+  --wrap-pad: 24px;         /* container side padding (desktop) */
+  --wrap-pad-mobile: 18px;
+  --section-y: 96px;        /* vertical section padding (desktop) */
+  --section-y-mobile: 56px;
+
+  /* ---- Common grid gaps ---- */
+  --gap-card: 24px;         /* between cards in a grid */
+  --gap-tight: 14px;
+  --gap-loose: 56px;        /* split layouts (text | image) */
+}

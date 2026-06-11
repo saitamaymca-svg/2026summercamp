@@ -1,0 +1,64 @@
+/* ============================================================
+   YMCA — Color tokens
+   ------------------------------------------------------------
+   Brand colors are defined by the national VI Guidelines (2017).
+   The reference ("基準色") colors are spot inks; the values below
+   are the approximate sRGB equivalents for screen.
+
+     YMCA Red   PANTONE 199 C   sRGB 213,0,50    #D50032
+     YMCA Blue  PANTONE 654 C   sRGB 0,58,112    #003A70
+     White      —               sRGB 255,255,255 #FFFFFF
+
+   The camp / program accent colors and the warm cream surface
+   system come from Saitama YMCA's youth-program expression
+   (e.g. the camp-leader recruitment site).
+   ============================================================ */
+
+:root {
+  /* ---- Brand core (official VI) ---- */
+  --ymca-red: #D50032;          /* YMCA Red — PANTONE 199C */
+  --ymca-red-deep: #B0002A;     /* pressed / hover */
+  --ymca-red-soft: #FFF1F3;     /* red-tinted surface wash */
+  --ymca-blue: #003A70;         /* YMCA Blue — PANTONE 654C */
+  --ymca-blue-deep: #002A52;    /* darker blue, footers */
+  --ymca-blue-soft: #EAF1F8;    /* blue-tinted surface wash */
+  --white: #FFFFFF;
+
+  /* ---- Camp / program accents (category colors) ---- */
+  --camp-forest: #2F8F5B;       /* 森のキャンプ — woods */
+  --camp-sea: #1E78C8;          /* 海のキャンプ — marine */
+  --camp-sun: #EE7A1B;          /* 英語のキャンプ — sun / english */
+  --camp-smile: #D14A8E;        /* みんなのキャンプ — inclusive */
+  --camp-adventure: #1C7A6E;    /* 冒険のキャンプ — adventure */
+  --accent-yellow: #FFD23E;     /* highlight on navy (slogan / marks) */
+
+  /* ---- Warm neutral / surface system ---- */
+  --cream: #FFF9F2;             /* default page background */
+  --cream-2: #FBEFE2;           /* sunken / secondary surface */
+  --line: #EADDCD;              /* hairline borders on cream */
+  --ink: #2A2622;               /* primary text */
+  --ink-soft: #5B544D;          /* secondary / muted text */
+
+  /* ---- Semantic aliases — prefer these in product code ---- */
+  --brand-primary: var(--ymca-red);
+  --brand-primary-press: var(--ymca-red-deep);
+  --brand-secondary: var(--ymca-blue);
+
+  --surface-page: var(--cream);
+  --surface-card: var(--white);
+  --surface-sunken: var(--cream-2);
+  --surface-dark: var(--ymca-blue);
+  --surface-dark-deep: var(--ymca-blue-deep);
+
+  --text-strong: var(--ink);
+  --text-body: var(--ink);
+  --text-muted: var(--ink-soft);
+  --text-on-brand: var(--white);
+  --text-on-dark: var(--white);
+  --text-link: var(--ymca-red);
+
+  --border-default: var(--line);
+  --border-on-dark: rgba(255, 255, 255, 0.16);
+
+  --focus-ring: var(--ymca-blue);
+}
