@@ -18,7 +18,7 @@ function NavBar() {
         </a>
         <nav className="nav-links">
           <a href="#why">YMCAの理由</a>
-          <a href="#camps">3つのキャンプ</a>
+          <a href="#camps">4つのキャンプ</a>
           <a href="#voices">保護者の声</a>
           <a href="#prepare">持ち物・準備</a>
           <a href="#faq">よくある質問</a>
@@ -57,7 +57,7 @@ function Hero({ variant, markColor, overlay, bg }) {
         <h1>{v.title}</h1>
         <p className="hero-sub">{v.sub}</p>
         <div className="hero-actions">
-          <Button variant="red" size="md" href="#camps" iconRight="→">3つのキャンプを見る</Button>
+          <Button variant="red" size="md" href="#camps" iconRight="→">4つのキャンプを見る</Button>
           <Button variant={lightText ? 'outline' : 'ghost'} size="md" href="#contact">お申し込み・お問い合わせ</Button>
         </div>
       </div>
@@ -97,7 +97,8 @@ function Intro() {
 /* ---------------- lineup（3キャンプ一覧） ---------------- */
 function LineupCard({ camp }) {
   return (
-    <Card as="article" tone="default" interactive className="camp">
+    <Card as="article" tone="default" interactive className={'camp' + (camp.isNew ? ' camp--new' : '')}>
+      {camp.isNew && <span className="camp-new-flag">★ NEW</span>}
       <div className={'camp-img' + (camp.badgePos ? ' badge-' + camp.badgePos : '')}>
         <div className="camp-badge-pos"><Badge tone={camp.tone} shadow>{camp.cat}</Badge></div>
         <span className="camp-nights">{camp.nights}</span>
@@ -107,6 +108,7 @@ function LineupCard({ camp }) {
         <div className="camp-date">📅 {camp.dateShort}</div>
       </div>
       <div className="camp-body">
+        {camp.isNew && <span className="camp-new-line">今年新登場！注目のキャンプ</span>}
         <h3>{camp.title}</h3>
         <p className="camp-place">📍 {camp.place}</p>
         <p className="camp-desc">{camp.desc}</p>
@@ -127,9 +129,9 @@ function Lineup() {
     <section className="lineup" id="camps">
       <div className="wrap">
         <div className="center sec-head-center reveal">
-          <Eyebrow center>この夏の3つのキャンプ</Eyebrow>
+          <Eyebrow center>この夏の4つのキャンプ</Eyebrow>
           <h2 className="sec-title" style={{ marginTop: '14px' }}>森で、海で、英語で。<br />お子さんにぴったりの夏を。</h2>
-          <p className="sec-lead">年齢や興味に合わせて選べる3つのキャンプ。気になるキャンプの「くわしく見る」から、日程や参加費をご確認ください。</p>
+          <p className="sec-lead">年齢や興味に合わせて選べる4つのキャンプ。気になるキャンプの「くわしく見る」から、日程や参加費をご確認ください。</p>
         </div>
         <div className="lineup-grid">
           {CD.CAMPS.map((c, i) => <div className="reveal" key={i}><LineupCard camp={c} /></div>)}
@@ -209,6 +211,7 @@ function CampDetail({ camp, idx }) {
     <section className={'cdetail ' + bg} id={camp.id}>
       <div className="wrap">
         <div className="cdetail-head reveal">
+          {camp.isNew && <Badge tone="red" shadow>新規開講</Badge>}
           <Badge tone={camp.tone}>{camp.cat}</Badge>
           <span className="camp-nights" style={{ position: 'static', boxShadow: 'none', border: '1px solid var(--line)' }}>{camp.nights}・{camp.dateShort}</span>
         </div>
@@ -252,7 +255,7 @@ function Prepare() {
         <div className="reveal"><Eyebrow>持ち物・準備</Eyebrow></div>
         <h2 className="sec-title reveal" style={{ marginTop: '14px' }}>当日まで楽しく準備</h2>
         <p className="sec-lead reveal">持ち物の目安と、安心のサポート体制をご紹介します。 　
-くわしくは打ち合わせ会・ご案内資料でお伝えします。</p>
+詳しくは打ち合わせ会・保護者用ハンドブックでお伝えします。</p>
         <div className="prep-grid">
           <Card tone="default" className="prep-list-card reveal">
             <h3>🎒 持ち物の目安</h3>
@@ -381,7 +384,7 @@ function Contact() {
           <h2>この夏、お子さんに<br /><span className="mark">忘れられない数日間</span>を。</h2>
           <p>ご相談だけでも大歓迎です。「ちょっと気になる」その気持ちを、まずはお聞かせください。</p>
           <div className="cta-actions">
-            <Button variant="red" size="lg" href="https://e45607e3-1e2d-4a19-8ed5-76b8a901476f.filesusr.com/ugd/f65abf_73bb801d22194580a6a6997b539e63ec.pdf" target="_blank" rel="noopener" iconRight="→">キャンプを選んで申し込む</Button>
+            <Button variant="red" size="lg" href="assets/SummerCamp-application.pdf" target="_blank" rel="noopener" iconRight="→">申込詳細について</Button>
             <Button variant="outline" size="lg" href="tel:0429395051">📞 04-2939-5051</Button>
           </div>
         </div>
@@ -394,7 +397,7 @@ function Contact() {
             <a className="cc-col" href="mailto:tokorozawa@saitamaymca.org">
               <span className="cc-label">✉ Mail</span>
               <span className="cc-value">tokorozawa@saitamaymca.org</span>
-              <span className="cc-note">24時間受付・お気軽にどうぞ</span>
+              <span className="cc-note">どんなことでもお気軽にご相談ください。</span>
             </a>
             <div className="cc-col">
               <span className="cc-label">📍 Access</span>
