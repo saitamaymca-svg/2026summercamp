@@ -115,7 +115,7 @@ section { padding: var(--section-y) 0; }
 
 /* ---- lineup (camps overview) ---- */
 .lineup { background: linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%); }
-.lineup-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--gap-card); margin-top: 52px; align-items: stretch; }
+.lineup-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: var(--gap-card); margin-top: 52px; align-items: stretch; max-width: 940px; margin-left: auto; margin-right: auto; }
 .lineup-grid > .reveal { display: flex; }
 .camp { overflow: hidden; padding: 0; display: flex; flex-direction: column; width: 100%; height: 100%; }
 .camp-img { height: 196px; position: relative; }
@@ -136,6 +136,14 @@ section { padding: var(--section-y) 0; }
 .camp-stat .k { display: block; font-size: 11.5px; color: var(--ink-soft); font-weight: 700; margin-bottom: 3px; }
 .camp-stat .v { display: block; font-family: var(--font-heading); font-weight: 900; font-size: 15px; color: var(--ymca-blue); line-height: 1.3; white-space: nowrap; }
 .camp-cta { margin-top: auto; }
+
+/* ---- 新規キャンプ（海っこ）の強調 ---- */
+.camp.camp--new { border: 2px solid var(--ymca-red); box-shadow: 0 0 0 4px var(--ymca-red-soft), 0 24px 60px -28px rgba(213,0,50,.42); }
+.camp.camp--new:hover { box-shadow: 0 0 0 4px var(--ymca-red-soft), 0 32px 70px -26px rgba(213,0,50,.5); }
+.camp-new-flag { position: absolute; top: 14px; left: 14px; z-index: 4; display: inline-flex; align-items: center; gap: 5px; background: var(--ymca-red); color: #fff; font-family: var(--font-heading); font-weight: 900; font-size: 13px; letter-spacing: .04em; padding: 7px 14px; border-radius: var(--radius-pill); box-shadow: 0 8px 20px -6px rgba(213,0,50,.65); animation: newPulse 2.4s ease-in-out infinite; }
+.camp-new-line { display: inline-flex; align-self: flex-start; align-items: center; background: var(--ymca-red-soft); color: var(--ymca-red); font-family: var(--font-heading); font-weight: 900; font-size: 12px; padding: 4px 11px; border-radius: var(--radius-pill); margin-bottom: 10px; }
+@keyframes newPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { .camp-new-flag { animation: none; } }
 
 /* ---- camp detail ---- */
 .cdetail { border-top: 1px solid var(--line); }
@@ -209,7 +217,7 @@ section { padding: var(--section-y) 0; }
 .voice .ava { width: 48px; height: 48px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center; }
 .voice .ava svg { display: block; }
 .voice .who b { display: block; font-family: var(--font-heading); font-weight: 700; color: var(--ymca-blue); font-size: 15px; }
-.voice .who small { color: var(--ink-soft); font-size: 13px; font-weight: 500; }
+.voice .who small { color: var(--ink-soft); font-size: 13px; font-weight: 500; white-space: pre-line; line-height: 1.4; }
 
 /* ---- gallery ---- */
 .gallery { background: linear-gradient(180deg, var(--cream), var(--cream-2)); }
@@ -280,7 +288,8 @@ a.cc-col:hover { background: var(--ymca-blue-soft); }
   .hero-inner { padding: 68px 0 76px; }
   .creq-row { grid-template-columns: 92px 1fr; }
   .checklist { grid-template-columns: 1fr; }
- .cc-combined { flex-direction: column; }
+  .cc-grid { grid-template-columns: 1fr; }
+  .cc-combined { flex-direction: column; }
   .cc-col + .cc-col { border-left: none; border-top: 1px solid var(--line); }
   .gal { grid-template-columns: repeat(2,1fr); }
   .gal .wide, .gal .tall { grid-column: auto; grid-row: auto; }
